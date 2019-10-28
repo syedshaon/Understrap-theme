@@ -1,0 +1,26 @@
+{
+	"browserSyncOptions": {
+		"proxy": "localhost/site23/",
+		"notify": false,
+		"open": "external",
+		"port": 8024
+	},
+	"browserSyncWatchFiles": [
+		"./css/*.min.css",
+		"./js/*.min.js",
+		"./**/*.php"
+	],
+	"paths": {
+		"js": "./js",
+		"css": "./css",
+		"img": "./img",
+		"imgsrc": "./src/img",
+		"sass": "./sass",
+		"node": "./node_modules/",
+		"bower": "./bower_components/",
+		"dev": "./src",
+		"dist": "./dist",
+		"distprod": "./dist-product",
+		"vendor": ""
+	}
+}

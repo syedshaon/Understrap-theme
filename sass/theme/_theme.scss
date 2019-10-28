@@ -1,0 +1,60 @@
+// This is an empty scss file for your custom styles - Please add your super duper awesome mega design styles here
+// Enabel wordbreak for extra long words
+// * {
+// 	word-break: break-all;
+// }
+
+// Fixed size for logo (Customize as wanted)
+.custom-logo-link {
+	height: 70px;
+	img {
+		height: 100%;
+		width: auto;
+	}
+}
+
+// Position nav items at flex end
+
+#navbarNavDropdown {
+	align-self: flex-end;
+}
+
+::placeholder {
+	color: #ffffff !important;
+}
+
+// #about {
+// 	background-image: linear-gradient(0deg, #377dff 0%, #00dffc 100%);
+// 	background-repeat: repeat-x;
+// 	.row {
+// 		background-image: url(../img/about-bg2.png);
+// 		background-repeat: no-repeat;
+// 		background-size: cover;
+// 		background-position: bottom center;
+// 	}
+// }
+
+// #contact i.fa {
+// 	// font-size: 5rem;
+// }
+.service-title {
+	font-size: 10rem;
+	color: #054157;
+	line-height: 1.2;
+	text-align: center;
+}
+.service-title-first {
+	color: #ff4444;
+	background-color: #054157;
+	padding-left: 1rem;
+	padding-right: 1rem;
+}
+
+#about .section-title h3,
+#contact .contact-title {
+	color: #054157;
+	span {
+		color: #ff4444;
+		background-color: #054157;
+	}
+}

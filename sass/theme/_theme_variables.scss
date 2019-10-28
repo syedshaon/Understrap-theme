@@ -1,0 +1,36 @@
+// Use this file to overwrite the basic Bootstrap variables and add your own variables
+// To overwrite a Bootstrap variable you don´t have to touch the Bootstrap folder.
+// Just copy a variable from src/sass/bootstrap4/_variables.scss, paste it here and edit the value.
+
+$primary: #054157; // Thats a sample how you could change a BootStrap variable.
+$secondary: #6c757d;
+$success: #00c851;
+$info: #33b5e5;
+$warning: #ffbb33;
+$danger: #ff4444;
+$light: #f8f9fa;
+$dark: #343a40;
+
+$carousel-control-color: $danger;
+$carousel-control-icon-width: 40px;
+
+$carousel-indicator-width: 20px;
+$carousel-indicator-height: 20px;
+$carousel-indicator-spacer: 15px;
+$carousel-indicator-active-bg: $danger;
+$carousel-caption-bg-color: rgba(0, 0, 0, 0.3);
+
+$enable-rounded: false;
+$enable-shadows: true;
+$enable-gradients: true;
+
+// Links
+//
+// Style anchor elements.
+
+$link-color: #212529;
+$link-decoration: none !default;
+$link-hover-color: darken($link-color, 15%) !default;
+$link-hover-decoration: underline !default;
+// Darken percentage for links with `.text-*` class (e.g. `.text-success`)
+$emphasized-link-hover-darken-percentage: 15% !default;

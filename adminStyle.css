@@ -1,0 +1,13 @@
+/* Redux specific */
+
+#redux-header,
+.redux-notice,
+#redux-intro-text,
+#redux-sub-footer,
+.redux-timer {
+	display: none !important;
+}
+
+.redux-main .regular-text {
+	width: 100% !important;
+}
