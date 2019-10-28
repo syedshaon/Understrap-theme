@@ -68,6 +68,7 @@ before_script:
     # @link http://jscs.info/
     # - npm install -g jscs [jscs merger with eslint]
     - npm install -g eslint 
+    - eslint --init
     # Install JSHint, a JavaScript Code Quality Tool
     # @link http://jshint.com/docs/
     - npm install -g jshint
