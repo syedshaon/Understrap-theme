@@ -10,7 +10,7 @@ language: php
 
 services:
   - mysql
-  
+
 # Declare versions of PHP to use. Use one decimal max.
 php:
     - "7.0"
@@ -66,7 +66,8 @@ before_script:
     - phpenv rehash
     # Install JSCS: JavaScript Code Style checker
     # @link http://jscs.info/
-    - npm install -g jscs
+    # - npm install -g jscs [jscs merger with eslint]
+    - npm install -g eslint 
     # Install JSHint, a JavaScript Code Quality Tool
     # @link http://jshint.com/docs/
     - npm install -g jshint
