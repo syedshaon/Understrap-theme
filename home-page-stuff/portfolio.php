@@ -19,7 +19,7 @@
 
     <div class="portfolio-tab row">
         <div class="col text-center my-3">
-            <button class="btn btn-outline-danger  shadow-lg portfolio-tab-item active" onclick="openItem('portfolio-item')">All</button>
+            <button class="btn btn-outline-primary  shadow-lg portfolio-tab-item active" onclick="openItem('portfolio-item')">All</button>
     <?php
         $args = array(
             'type'                     => 'portfolio',
@@ -39,7 +39,7 @@
                         $categoryName = $Categories->name;
                         $categoryId = $Categories->term_id;
                         if("uncategorized" != $category){ ?>
-                        <button class="btn btn-outline-danger  shadow-lg portfolio-tab-item " onclick="openItem('<?php echo $category ?>')"><?php echo $categoryName ?></button>        
+                        <button class="btn btn-outline-primary  shadow-lg portfolio-tab-item " onclick="openItem('<?php echo $category ?>')"><?php echo $categoryName ?></button>        
                         <?php }
         } ?>
         </div>
@@ -47,13 +47,12 @@
 
     <div class="portfolio-items-all  container">
         <div class="row">
-        <?php 
-            $allCategories = get_categories();
+        <?php            
             // var_dump($allCategories );
-            foreach ($allCategories as $Categories){
-                            $category = $Categories->slug;
-                            $categoryName = $Categories->name;
-                            $categoryId = $Categories->term_id;                     
+            // foreach ($allCategories as $Categories){
+            //                 $category = $Categories->slug;
+            //                 $categoryName = $Categories->name;
+            //                 $categoryId = $Categories->term_id;                     
 
 							$ourProducts = new WP_Query(array(
 							'posts_per_page' => -1,
@@ -61,35 +60,50 @@
 							'ignore_sticky_posts' => true,
 							'orderby'=> 'order', 							
 							 'order' => 'ASC',
-							'category_name' => $category
+							// 'category_name' => $category
                             ));        ?>    
         
-        
-        
+        <?php 
+        // var_dump($category);
+
+        ?>
         
 
                 <?php
 					while ($ourProducts->have_posts()) {
 						$ourProducts->the_post(); ?>
 										
-                            <div class="portfolio-item  text-center col-sm-6 col-md-4 col-xl-3 mb-5  <?php echo ($category); ?>"> 
-                             <?php the_post_thumbnail("port-thumb",  ['class' => 'img-fluid, shadow-lg'])?> 
+                            <div class="portfolio-item  text-center col-sm-6 col-md-4 col-xl-3 mb-5  <?php 
+                            $allCategories = get_the_category(get_the_ID());
+                           foreach ($allCategories as $key => $value) {
+                               echo($value->slug)." ";
+                           }
+                                
+                            
+                            ?>"> 
+                            
+                            <?php  //var_dump($allCategories[0]->slug); ?>
+                             <?php  the_post_thumbnail("port-thumb",  ['class' => 'img-fluid, shadow-lg portfolio-img'])?> 
+                             
                                 <div class="portfolio-urls text-center">
-                                <a class="post-url  p-2 m-2" href="<?php echo the_permalink(); ?>"><i class="fa fa-anchor"></i></a>
+                                    
                                 <?php if(get_field('git_url')){ ?>
-                                <a class="git-url  p-2 m-2" href="<?php echo get_field('git_url'); ?>"><i class="fa fa-git-square"></i></a>
+                                <a class="git-url  m-2" href="<?php echo get_field('git_url'); ?>"><i class="fa fa-git-square"></i></a>
                                 <?php } ?>
                                 <?php if(get_field('website_url')){ ?>
-                                <a class="web-url  p-2 m-2" href="<?php echo get_field('website_url'); ?>"><i class="fa fa-globe"></i></a>
+                                <a class="web-url  m-2" href="<?php echo get_field('website_url'); ?>"><i class="fa fa-globe"></i></a>
                                 <?php } ?>
+                              
                                 </div>
+                                <a class="post-url h5 mb-0 d-block p-1 bg-primary text-white m-2" href="<?php echo the_permalink(); ?>"><?php echo get_the_title(); ?></a>
                             </div>
 
                     <?php
 					}
 				?>      
 
-        <?php } 
+        <?php
+        //  } 
         wp_reset_query();
         ?>
         </div>
