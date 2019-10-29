@@ -16,11 +16,11 @@ global $d_portfolio;
 
 <?php get_template_part( 'sidebar-templates/sidebar', 'footerfull' ); ?>
 
-<div id="wrapper-footer">
+<div id="wrapper-footer"  class="aos-item aos-init aos-animate" data-aos="fade-up" >
 
 	<div class="<?php echo esc_attr( $container ); ?>">
 
-		<footer class="site-footer" id="colophon">
+		<footer class="site-footer" id="footer">
 
 			<div class="row bg-primary text-white ">
 
@@ -61,7 +61,6 @@ global $d_portfolio;
 </div><!-- #page we need this extra closing tag here -->
 
 <?php wp_footer(); ?>
-
 </body>
 
 </html>

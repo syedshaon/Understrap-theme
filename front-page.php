@@ -16,30 +16,35 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 ?>
 
-<div class="wrapper" id="page-wrapper">
+<!-- <div class="wrapper" id="page-wrapper"> -->
+
+
 
 	<div class="<?php echo esc_attr( $container ); ?>" id="content" tabindex="-1">
 
 		<div class="row">
 
-			<?php 
-				get_template_part('home-page-stuff/hero-slider');
-			?>
-
-			<?php 
-				get_template_part('home-page-stuff/about-us');
-			?>
-			<?php 
-				get_template_part('home-page-stuff/services');
-			?>
-
-			<?php 
-				get_template_part('home-page-stuff/contact');
-			?>
-
-			
-
 			<main class="site-main" id="main">
+					<?php 
+					// get_template_part('home-page-stuff/hero-slider');
+				?>
+				<?php 
+					get_template_part('home-page-stuff/hero-typed');
+				?>
+
+				<?php 
+					get_template_part('home-page-stuff/about-us');
+				?>
+				<?php 
+					get_template_part('home-page-stuff/services');
+				?>
+				<?php 
+					get_template_part('home-page-stuff/portfolio');
+				?>
+
+				<?php 
+					get_template_part('home-page-stuff/contact');
+				?>
 
 				<?php while ( have_posts() ) { the_post(); ?>
 
@@ -56,6 +61,6 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 	</div><!-- #content -->
 
-</div><!-- #page-wrapper -->
+<!-- </div> #page-wrapper -->
 
 <?php get_footer();

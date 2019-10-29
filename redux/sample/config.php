@@ -272,6 +272,63 @@
 
         )));
            Redux::setsection($opt_name, array(
+        'title'     => 'Hero Typed Setup',
+        'id'        => 'typed_setup',
+        'desc'      => 'Setup Typed effect text here',
+        'icon'      => 'el el-font',
+        'subsection' => true,
+        'fields'    => array(
+
+            array(
+                'id'        => 'typed-title',
+                'type'      => 'text',
+                'title'     => "Tyepd section Title",
+            ),
+            array(
+                    'id'       => 'typed-image',
+                    'type'     => 'media', 
+                    'url'      => true,
+                    'title'    => 'Hero (typed) Section Image',
+                    
+                ),
+            array(
+                        'id'        => 'typed_txt',
+                        'type'      => 'multi_text',
+                        'title'     => "Typed Messages :",
+                        'desc'      => "Add sentences to show up on typed area, one by one",
+                        'add_text'  => 'Add another Sentence',
+                    ),
+            array(
+                'id'               => 'typed_editor',
+                'type'             => 'textarea',
+                'title'            => 'Typed Messages',
+                ),
+           
+
+        )));
+
+         Redux::setsection($opt_name, array(
+        'title'     => 'Portfolio Setup',
+        'id'        => 'portfoilo_setup',
+        'desc'      => 'Setup portfolio Section here',
+        'icon'      => 'el el-compass',
+        'subsection' => true,
+        'fields'    => array(
+
+            array(
+                'id'        => 'portfoilo-title',
+                'type'      => 'text',
+                'title'     => "Portfolio Section Title",
+            ),
+            array(
+                'id'        => 'portfoilo-details',
+                'type'      => 'text',
+                'title'     => "Portfolio Section Details",
+            ),           
+
+        )));
+         
+           Redux::setsection($opt_name, array(
         'title'     => 'About Section Setup',
         'id'        => 'about_setup',
         'desc'      => 'Setup About Section here',

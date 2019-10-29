@@ -1,4 +1,9 @@
 /* Social Menu  in woocommerce https://gist.github.com/juanpablogdl/a2c6807cb422a0aaa79acd93c32160b1**/
+.social-info a,
+.social-info a:hover,
+.social-info a:focus {
+	text-decoration: none;
+}
 .social-info a[href*="dribbble.com"],
 .social-info a[href*="facebook.com"],
 .social-info a[href*="flickr.com"],

@@ -65,6 +65,7 @@ if ( ! function_exists( 'understrap_setup' ) ) {
 		 */
 		add_theme_support( 'post-thumbnails' );
 		add_image_size('hero-slides', 1400, 425, false);
+		add_image_size('port-thumb', 550, 650, true);
 
 		/*
 		 * Adding support for Widget edit icons in customizer

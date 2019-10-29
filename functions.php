@@ -9,6 +9,7 @@
 defined( 'ABSPATH' ) || exit;
 
 $understrap_includes = array(
+	'/custom-post.php',                          // Load Editor functions.
 	'/theme-settings.php',                  // Initialize theme default settings.
 	'/setup.php',                           // Theme setup and custom theme supports.
 	'/widgets.php',                         // Register widget area.
@@ -49,3 +50,8 @@ wp_enqueue_style('redux', get_template_directory_uri()."/adminStyle.css" );
 };
 
 add_action('admin_enqueue_scripts', 'addReduxStyle'); 
+
+/**
+ * ACF Plugin and it's fields.
+ */
+require get_template_directory() . '/inc/acf-theme-field.php';

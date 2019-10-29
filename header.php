@@ -17,7 +17,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<link rel="profile" href="http://gmpg.org/xfn/11">
+	<link rel="profile" href="http://gmpg.org/xfn/11">	
 	<?php wp_head(); ?>
 </head>
 
@@ -26,11 +26,11 @@ $container = get_theme_mod( 'understrap_container_type' );
 <div class="site" id="page">
 
 	<!-- ******************* The Navbar Area ******************* -->
-	<div id="wrapper-navbar " itemscope itemtype="http://schema.org/WebSite">
+	<div id="navbar-wrapper" itemscope itemtype="http://schema.org/WebSite">
 
 		<a class="skip-link sr-only sr-only-focusable" href="#content"><?php esc_html_e( 'Skip to content', 'understrap' ); ?></a>
 
-		<nav class="navbar navbar-expand-md navbar-dark bg-primary">
+		<nav  id="navbar" class="navbar container-fluid navbar-expand-md navbar-dark bg-primary">
 
 		<?php if ( 'container' == $container ) : ?>
 			<div class="container">
@@ -88,3 +88,8 @@ $container = get_theme_mod( 'understrap_container_type' );
 		
 
 	</div><!-- #wrapper-navbar end -->
+	<div class="development-notice">
+	<p >
+		Website on Development!! I am currently working on this website.
+	</p>
+</div>

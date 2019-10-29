@@ -1,7 +1,7 @@
 
 
-<div id="about" class="container-fluid my-5">
-    <div class="row">
+<div id="about" class="container-fluid my-5 align-items-center d-md-flex">
+    <div class="row ">
         <div class="col-md-5">
         <?php global $d_portfolio; 
         if($d_portfolio['about-image']){

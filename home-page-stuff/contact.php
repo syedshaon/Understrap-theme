@@ -1,12 +1,13 @@
 <?php 
  global $d_portfolio;
 ?>
-<section id="contact" class="container-fluid  my-5">
-      <div class="row d-md-flex align-items-stretch">
+<section id="contact" class="container-fluid  d-md-flex">
+  <div class="container-fluid">
+      <div id="contact-details" class="row d-md-flex align-items-stretch">
         <div class="col-md-4 card">
-            <div class="card-body text-center">
+            <div class="card-body text-center p-1">
                 <i class="fa fa-map-marker text-primary display-4"></i>
-                <h3 class="h6 mb-2">MY Address</h3>
+                <h6 class="h6 mb-2">MY Address</h6>
 
                 <p class="font-size-sm text-muted"><?php                
                 if($d_portfolio['contact-address']){
@@ -16,9 +17,9 @@
         </div>
         
         <div class="col-md-4 card">
-          <div class="card-body text-center">                
+          <div class="card-body text-center p-1">                
                 <i class="fa fa-phone  text-primary display-4"></i>
-              <h3 class="h6 mb-3">Phone number</h3>
+              <h6 class="h6 mb-2">Phone number</h6>
               <?php                
                 if($d_portfolio['contact-phone']){ ?>
                     <a class="nav-link-style" href="tel:<?php echo $d_portfolio['contact-phone'] ?>">
@@ -28,9 +29,9 @@
           </div>
         </div>
         <div class="col-md-4 card">
-          <div class="card-body text-center">
+          <div class="card-body text-center p-1">
             <i class="fa fa-envelope text-primary display-4"></i>
-              <h3 class="h6 mb-3">Email Address</h3>
+              <h6 class="h6 mb-2">Email Address</h6>
               <?php if($d_portfolio['contact-email']){ ?>
                     <a class="nav-link-style" href="mailto:<?php echo $d_portfolio['contact-email'] ?>">
                     <?php echo $d_portfolio['contact-email'] ?></a>
@@ -42,25 +43,26 @@
 
       <!-- Map and contact form -->    
     
-      <div class="row no-gutters pt-5">
+      <div id="contact-form" class="row no-gutters pt-5">
         <?php if($d_portfolio['map-short-code']){ ?>
-        <div class="col-md-6 d-flex align-items-center">
+        <div class="col-sm-6 col-lg-5 offset-lg-1   d-flex align-items-center">
         <?php echo do_shortcode($d_portfolio['map-short-code']); ?>          
         </div>
         <?php } ?>
-        <div class="col-md-6 px-3  ">
+        <div class="col-sm-6 col-lg-5 offset-lg-1 px-3  ">
             <?php if($d_portfolio['contact-title']){ ?>
               <?php 
                         $c_title = $d_portfolio['contact-title'];;
                         $first_letter = substr($c_title, 0, 1);
                         $rest_letters = substr($c_title, 1);
                     ?>
-          <div class="h1 mb-4 text-center contact-title"><span><?php echo $first_letter; ?></span><?php echo $rest_letters; ?> </div>
+          <div class="h1 mb-2 text-center contact-title"><span><?php echo $first_letter; ?></span><?php echo $rest_letters; ?> </div>
           <?php } ?>
           <?php if($d_portfolio['contact-form-short-code']){ ?>
           <?php echo do_shortcode($d_portfolio['contact-form-short-code']); ?> 
           <?php } ?>
         </div>
 
+      </div>
       </div>
 </section>

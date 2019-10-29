@@ -4,6 +4,14 @@
 // 	word-break: break-all;
 // }
 
+// Navbar Area
+#navbar-wrapper {
+	position: relative;
+}
+#navbar {
+	top: 0;
+	z-index: 20000;
+}
 // Fixed size for logo (Customize as wanted)
 .custom-logo-link {
 	height: 70px;
@@ -17,10 +25,6 @@
 
 #navbarNavDropdown {
 	align-self: flex-end;
-}
-
-::placeholder {
-	color: #ffffff !important;
 }
 
 // #about {
@@ -37,6 +41,8 @@
 // #contact i.fa {
 // 	// font-size: 5rem;
 // }
+
+// Services Section
 .service-title {
 	font-size: 10rem;
 	color: #054157;
@@ -49,12 +55,164 @@
 	padding-left: 1rem;
 	padding-right: 1rem;
 }
+// Services Section Ends
 
+// Typed Hero Section
+#hero-typed {
+	background-attachment: fixed;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	.typed-container {
+		background-color: rgba(255, 255, 255, 0.4);
+		position: relative;
+		.header-social-info {
+			position: absolute;
+			bottom: 0;
+		}
+	}
+}
+
+#typed {
+	line-height: 1.5;
+	text-align: center;
+	font-size: 1.5rem;
+}
+
+@media only screen and (min-width: 700px) {
+	#typed {
+		white-space: pre;
+	}
+}
+@media only screen and (min-width: 1300px) {
+	#typed {
+		font-size: 2rem;
+	}
+}
+
+// Typed Hero Section Ends
+
+// contact section
+#contact {
+	padding-top: 80px;
+	align-items: flex-start;
+}
+@media only screen and (min-width: 1900px) {
+	#contact {
+		align-items: center;
+	}
+}
+// Other setup
+
+#hero-typed,
+.typed-container,
+#about,
+#service,
+#contact {
+	min-height: calc(100vh - 56px);
+}
+
+// First Letter different color setup
 #about .section-title h3,
-#contact .contact-title {
+#contact .contact-title,
+#portfolio .portfolio-info-title {
 	color: #054157;
 	span {
 		color: #ff4444;
 		background-color: #054157;
+	}
+}
+
+::placeholder {
+	color: #ffffff !important;
+}
+
+#contact-form {
+	::placeholder {
+		color: #054157 !important;
+	}
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+// @media only screen and (min-width: 1900px) {
+// 	body {
+// 		scroll-snap-type: mandatory;
+// 		scroll-snap-points-y: repeat(300px);
+// 		scroll-snap-type: y mandatory;
+// 	}
+// 	#navbar,
+// 	#hero-typed,
+// 	#about,
+// 	#service,
+// 	#contact-details,
+// 	#contact-form,
+// 	#footer {
+// 		scroll-snap-align: start;
+// 		position: relative;
+// 	}
+// }
+
+html {
+	font-size: 70%;
+}
+
+@media only screen and (min-width: 1200px) {
+	html {
+		font-size: 80%;
+	}
+}
+@media only screen and (min-width: 1600px) {
+	html {
+		font-size: 100%;
+	}
+}
+
+main.site-main {
+	max-width: 1920px;
+	margin: 0 auto;
+}
+
+// Portfolio SEction
+
+// .portfolio-items-all .portfolio-item {
+// 	transition: all 0.3s;
+// }
+.portfolio-item {
+	position: relative;
+	.portfolio-urls {
+		position: absolute;
+		bottom: 0;
+		display: flex;
+		justify-content: center;
+		padding: 0.5rem;
+		z-index: 22;
+		width: 100%;
+		a i::before {
+			color: #fff;
+			font-size: 2rem;
+		}
+	}
+}
+
+// Development Notice
+
+@keyframes marquee {
+	0% {
+		transform: translateX(100%);
+	}
+	100% {
+		transform: translateX(-100%);
+	}
+}
+.development-notice {
+	overflow-x: hidden;
+	background-color: #1c87c9;
+	color: #fff;
+	padding: 5px;
+	p {
+		animation: marquee 40s linear infinite;
 	}
 }
