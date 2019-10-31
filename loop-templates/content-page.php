@@ -11,7 +11,7 @@ defined( 'ABSPATH' ) || exit;
 
 <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 
-	<header class="entry-header">
+	<header class="entry-header bg-dark p-3 mb-5 text-white">
 
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 

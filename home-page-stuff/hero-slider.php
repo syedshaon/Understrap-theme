@@ -11,7 +11,7 @@ defined( 'ABSPATH' ) || exit;
 
 
 <!-- ******************* The Hero Widget Area ******************* -->
-<div class="container-fluid">
+<div class="container-fluid bottom-margin">
 	<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
 
 		<div class="carousel-inner" role="listbox">
@@ -39,7 +39,7 @@ defined( 'ABSPATH' ) || exit;
                             <div class="carousel-item <?php echo "carousel-item-".$key; ?>">
                                 
                                 <img class="d-block w-100" src="<?php echo $value['image'] ?>" alt="<?php echo $value['title'] ?>">
-                                <div class="carousel-caption d-none d-md-block">
+                                <div class="carousel-caption d-none mb-5 d-md-block">
                                     <?php if($value['title']){ ?>
                                     <h3><?php echo $value['title'] ?></h3>
                                     <?php } ?>

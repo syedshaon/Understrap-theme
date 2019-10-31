@@ -18,34 +18,11 @@ $container = get_theme_mod( 'understrap_container_type' );
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link rel="profile" href="http://gmpg.org/xfn/11">	
-	<style>
-		.no-js #loader { display: none;  }
-		.js #loader { display: block; position: absolute; left: 100px; top: 0; }
-		.se-pre-con {
-			position: fixed;
-			left: 0px;
-			top: 0px;
-			width: 100%;
-			height: 100%;
-			z-index: 9999;
-			background: url(<?php echo get_template_directory_uri()."/img/Preloader_3.gif" ?>) center no-repeat #fff;
-		}
-	
-	</style>
 	<?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
 <?php do_action( 'wp_body_open' ); ?>
-<div class="se-pre-con">
-	<script>
-		$ = jQuery.noConflict();
-	$(window).load(function() {
-		// Animate loader off screen
-		$(".se-pre-con").fadeOut("slow");;
-	});
-	</script>
-</div>
 <div class="site" id="page">
 
 	<!-- ******************* The Navbar Area ******************* -->
@@ -96,7 +73,15 @@ $container = get_theme_mod( 'understrap_container_type' );
 				); ?>
 			<?php if ( 'container' == $container ) : ?>
 			</div><!-- .container -->
-			<?php endif; ?>			
+			<?php endif; ?>
+			<form class="d-none d-md-block ml-3" action="<?php echo esc_url(home_url()."?=") ?>" class="ml-3">
+				<div class="input-group">
+					<input type="text" name="s" class="form-control bg-transparent text-white" placeholder="Search" >
+					<div class="input-group-append">
+						<button type="submit" class="bg-primary text-white input-group-text" ><i class="fa fa-search" ></i> </button>
+					</div>
+				</div>
+			</form>
 
 		</nav><!-- .site-navigation -->
 

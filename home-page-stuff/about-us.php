@@ -1,8 +1,12 @@
+<?php 
 
+defined( 'ABSPATH' ) || exit;
 
-<div id="about" class="container-fluid my-5 align-items-center d-md-flex">
+?>
+
+<section id="about" class="container-fluid bottom-margin align-items-center d-md-flex">
     <div class="row ">
-        <div class="col-md-5">
+        <div class="col-md-4 offset-md-1">
         <?php global $d_portfolio; 
         if($d_portfolio['about-image']){
             ?>
@@ -11,7 +15,7 @@
             </div>
         <?php } ?>
         </div>
-        <div class="col-md-6 offset-md-1 d-flex align-items-center ">
+        <div class="col-md-5 offset-md-1 d-flex align-items-center ">
             <div class="profile-wrapper">
             <?php 
                 if($d_portfolio['about-title']){
@@ -40,7 +44,7 @@
                 <?php  
                     if($d_portfolio['about-cta']){
                 ?>
-                        <a href="<?php echo $d_portfolio['about-cta-url']; ?>" class="btn btn-outline-danger  shadow-lg">
+                        <a target="_blank" href="<?php echo $d_portfolio['about-cta-url']; ?>" class="btn btn-primary  shadow">
                         <?php echo $d_portfolio['about-cta']; ?>
                         </a>
                 <?php } ?>  
@@ -50,4 +54,4 @@
             </div>
         </div>
     </div>
-</div>
+</section>

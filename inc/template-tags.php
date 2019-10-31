@@ -27,21 +27,21 @@ if ( ! function_exists( 'understrap_posted_on' ) ) {
 		);
 		$posted_on   = apply_filters(
 			'understrap_posted_on', sprintf(
-				'<span class="posted-on">%1$s <a href="%2$s" rel="bookmark">%3$s</a></span>',
-				esc_html_x( 'Posted on', 'post date', 'understrap' ),
+				'<span class="posted-on"><i class="fa fa-calendar"></i> <a href="%2$s" rel="bookmark">%3$s</a></span>',
+				esc_html_x( 'post date', 'understrap' ),
 				esc_url( get_permalink() ),
 				apply_filters( 'understrap_posted_on_time', $time_string )
 			)
 		);
 		$byline      = apply_filters(
 			'understrap_posted_by', sprintf(
-				'<span class="byline"> %1$s<span class="author vcard"><a class="url fn n" href="%2$s"> %3$s</a></span></span>',
-				$posted_on ? esc_html_x( 'by', 'post author', 'understrap' ) : esc_html_x( 'Posted by', 'post author', 'understrap' ),
+				'<span class="byline"> <i class="fa fa-user"></i> <span class="author vcard"><a class="url fn n" href="%2$s"> %3$s</a></span></span>',
+				$posted_on ? esc_html_x( 'post author', 'understrap' ) : esc_html_x( 'Posted by ', 'post author', 'understrap' ),
 				esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
 				esc_html( get_the_author() )
 			)
 		);
-		echo $posted_on . $byline; // WPCS: XSS OK.
+		echo  $byline."  ". $posted_on; // WPCS: XSS OK.
 	}
 }
 
@@ -57,7 +57,7 @@ if ( ! function_exists( 'understrap_entry_footer' ) ) {
 			$categories_list = get_the_category_list( esc_html__( ', ', 'understrap' ) );
 			if ( $categories_list && understrap_categorized_blog() ) {
 				/* translators: %s: Categories of current post */
-				printf( '<span class="cat-links">' . esc_html__( 'Posted in %s', 'understrap' ) . '</span>', $categories_list ); // WPCS: XSS OK.
+				printf( '<span class="cat-links"> <i class="fa fa-folder-open-o"></i> ' . esc_html__( ' %s', 'understrap' ) . '</span>', $categories_list ); // WPCS: XSS OK.
 			}
 			/* translators: used between list items, there is a space after the comma */
 			$tags_list = get_the_tag_list( '', esc_html__( ', ', 'understrap' ) );
@@ -77,7 +77,7 @@ if ( ! function_exists( 'understrap_entry_footer' ) ) {
 				esc_html__( 'Edit %s', 'understrap' ),
 				the_title( '<span class="screen-reader-text">"', '"</span>', false )
 			),
-			'<span class="edit-link">',
+			'<span class="edit-link"> ',
 			'</span>'
 		);
 	}

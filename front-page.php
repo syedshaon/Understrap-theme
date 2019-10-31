@@ -28,22 +28,42 @@ $container = get_theme_mod( 'understrap_container_type' );
 					<?php 
 					// get_template_part('home-page-stuff/hero-slider');
 				?>
+				
+
 				<?php 
-					get_template_part('home-page-stuff/hero-typed');
+					global $d_portfolio;
+					$show_section = $d_portfolio['home_page_layout']['enabled'];
+					// var_dump($show_section);
+
+					foreach ($show_section as $key => $value) {
+						// echo $key;
+						if($key == 'staticpage'){
+							while(have_posts()){
+								the_post(); ?>
+								
+								<div class="container">
+									<?php the_content(); ?>
+								</div>
+
+								<?php
+							}
+						}
+						 get_template_part("home-page-stuff/$key");
+					}
 				?>
 
 				<?php 
-					get_template_part('home-page-stuff/about-us');
-				?>
-				<?php 
-					get_template_part('home-page-stuff/services');
-				?>
-				<?php 
-					get_template_part('home-page-stuff/portfolio');
-				?>
-
-				<?php 
-					get_template_part('home-page-stuff/contact');
+					// get_template_part('home-page-stuff/hero-typed');
+				
+					// get_template_part('home-page-stuff/about-us');
+				
+					// get_template_part('home-page-stuff/services');
+				
+					// get_template_part('home-page-stuff/portfolio');
+				
+					// get_template_part('home-page-stuff/feedback');
+				
+					// get_template_part('home-page-stuff/contact');
 				?>
 
 				<?php while ( have_posts() ) { the_post(); ?>

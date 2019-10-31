@@ -27,36 +27,6 @@
 	align-self: flex-end;
 }
 
-// #about {
-// 	background-image: linear-gradient(0deg, #377dff 0%, #00dffc 100%);
-// 	background-repeat: repeat-x;
-// 	.row {
-// 		background-image: url(../img/about-bg2.png);
-// 		background-repeat: no-repeat;
-// 		background-size: cover;
-// 		background-position: bottom center;
-// 	}
-// }
-
-// #contact i.fa {
-// 	// font-size: 5rem;
-// }
-
-// Services Section
-.service-title {
-	font-size: 10rem;
-	color: #054157;
-	line-height: 1.2;
-	text-align: center;
-}
-.service-title-first {
-	color: #ff4444;
-	background-color: #054157;
-	padding-left: 1rem;
-	padding-right: 1rem;
-}
-// Services Section Ends
-
 // Typed Hero Section
 #hero-typed {
 	background-attachment: fixed;
@@ -90,11 +60,102 @@
 	}
 }
 
+#hero-typed,
+.typed-container {
+	min-height: calc(100vh - 56px);
+}
 // Typed Hero Section Ends
+
+// #about {
+// 	background-image: linear-gradient(0deg, #377dff 0%, #00dffc 100%);
+// 	background-repeat: repeat-x;
+// 	.row {
+// 		background-image: url(../img/about-bg2.png);
+// 		background-repeat: no-repeat;
+// 		background-size: cover;
+// 		background-position: bottom center;
+// 	}
+// }
+
+// #contact i.fa {
+// 	// font-size: 5rem;
+// }
+
+// Services Section
+.service-title {
+	font-size: 10rem;
+	color: #054157;
+	line-height: 1.2;
+	text-align: center;
+}
+.service-title-first {
+	color: #ff4444;
+	background-color: #054157;
+	padding-left: 1rem;
+	padding-right: 1rem;
+}
+// Services Section Ends
+
+// Portfolio SEction
+
+.portfolio-item {
+	position: relative;
+	overflow: hidden;
+	width: 100%;
+	&:hover {
+		.portfolio-img {
+			transform: scale(1.2);
+		}
+	}
+	.portfolio-img {
+		width: 100%;
+		height: auto;
+		transform: scale(1);
+		transition: all 0.3s;
+	}
+	.portfolio-urls {
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		height: 100%;
+		overflow: hidden;
+		a i::before {
+			color: #fff;
+			font-size: 2rem;
+			padding: 1rem;
+			background-color: #054157;
+		}
+	}
+	a.post-url {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		transform: scaleY(0);
+		transition: all 0.5s;
+	}
+}
+.portfolio-item .portfolio-urls a {
+	transform: translateY(-80px);
+	transition: all 0.5s ease;
+}
+.portfolio-item:hover .portfolio-urls a,
+.portfolio-item:focus .portfolio-urls a {
+	transform: translateY(80px);
+}
+.portfolio-item:hover a.post-url,
+.portfolio-item:focus a.post-url {
+	transform: none;
+}
+
+// Portfolio SEction Ends
 
 // contact section
 #contact {
-	padding-top: 80px;
 	align-items: flex-start;
 }
 @media only screen and (min-width: 1900px) {
@@ -103,14 +164,6 @@
 	}
 }
 // Other setup
-
-#hero-typed,
-.typed-container,
-#about,
-#service,
-#contact {
-	min-height: calc(100vh - 56px);
-}
 
 // First Letter different color setup
 #about .section-title h3,
@@ -129,7 +182,7 @@
 
 #contact-form {
 	::placeholder {
-		color: #054157 !important;
+		color: #c7c7c5 !important;
 	}
 }
 
@@ -175,68 +228,33 @@ main.site-main {
 	margin: 0 auto;
 }
 
-// Portfolio SEction
-
-// .portfolio-items-all .portfolio-item {
-// 	transition: all 0.3s;
-// }
-.portfolio-item {
-	position: relative;
-	overflow: hidden;
-	width: 100%;
-	.portfolio-img {
-		width: 100%;
-		height: auto;
-	}
-	.portfolio-urls {
-		position: absolute;
-		bottom: 0;
-		width: 100%;
-		display: flex;
-		justify-content: center;
-		height: 100%;
-		overflow: hidden;
-		a i::before {
-			color: #fff;
-			font-size: 2rem;
-			padding: 1rem;
-			background-color: #054157;
-		}
-	}
-	a.post-url {
-		position: absolute;
-		bottom: 0;
-		left: 0;
-		width: 100%;
-		display: flex;
-		justify-content: center;
-	}
-}
-.portfolio-item .portfolio-urls a {
-	transform: translateY(-80px);
-	transition: all 0.5s ease;
-}
-.portfolio-item:hover .portfolio-urls a,
-.portfolio-item:focus .portfolio-urls a {
-	transform: translateY(80px);
+// Used dark shadow in navbar
+.dark-shadow {
+	box-shadow: 2px 10px 10px rgba(0, 0, 0, 0.675);
 }
 
-// Development Notice
-
-@keyframes marquee {
-	0% {
-		transform: translateX(100%);
-	}
-	100% {
-		transform: translateX(-100%);
-	}
+.my-6,
+.mt-6 {
+	margin-top: 5rem;
 }
-.development-notice {
-	overflow-x: hidden;
-	background-color: #1c87c9;
-	color: #fff;
-	padding: 5px;
-	p {
-		animation: marquee 40s linear infinite;
-	}
+.my-6,
+.mb-6 {
+	margin-bottom: 5rem;
+}
+
+.my-7,
+.mt-7 {
+	margin-top: 7rem;
+}
+.my-7,
+.mb-7 {
+	margin-bottom: 7rem;
+}
+
+.bottom-margin {
+	margin-bottom: 10rem;
+}
+
+* {
+	word-wrap: break-word;
 }

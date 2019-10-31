@@ -1,7 +1,12 @@
 <?php 
+
+defined( 'ABSPATH' ) || exit;
+
+?>
+<?php 
  global $d_portfolio; ?>
 
-<section id="portfolio" class="portfolio  my-5 container-fluid">
+<section id="portfolio" class="portfolio bottom-margin container-fluid">
     <div class="portfolio-info row">
         <div class="col text-center">
             <?php if($d_portfolio['portfoilo-title']){ 
@@ -45,7 +50,7 @@
         </div>
     </div>
 
-    <div class="portfolio-items-all  container">
+    <div class="portfolio-items-all  container-fluid  px-5">
         <div class="row">
         <?php            
             // var_dump($allCategories );
@@ -83,19 +88,19 @@
                             ?>"> 
                             
                             <?php  //var_dump($allCategories[0]->slug); ?>
-                             <?php  the_post_thumbnail("port-thumb",  ['class' => 'img-fluid, shadow-lg portfolio-img'])?> 
+                             <?php  the_post_thumbnail("port-thumb",  ['class' => 'img-fluid, shadow portfolio-img border border-info'])?> 
                              
                                 <div class="portfolio-urls text-center">
                                     
                                 <?php if(get_field('git_url')){ ?>
-                                <a class="git-url  m-2" href="<?php echo get_field('git_url'); ?>"><i class="fa fa-git-square"></i></a>
+                                <a target="_blank" class="git-url  m-2" href="<?php echo get_field('git_url'); ?>"><i class="fa fa-git-square"></i></a>
                                 <?php } ?>
                                 <?php if(get_field('website_url')){ ?>
-                                <a class="web-url  m-2" href="<?php echo get_field('website_url'); ?>"><i class="fa fa-globe"></i></a>
+                                <a target="_blank" class="web-url  m-2" href="<?php echo get_field('website_url'); ?>"><i class="fa fa-globe"></i></a>
                                 <?php } ?>
                               
                                 </div>
-                                <a class="post-url h5 mb-0 d-block p-1 bg-primary text-white m-2" href="<?php echo the_permalink(); ?>"><?php echo get_the_title(); ?></a>
+                                <a target="_blank" class="post-url h5 mb-0 d-block p-1 bg-primary text-white m-2" href="<?php echo the_permalink(); ?>"><?php echo get_the_title(); ?></a>
                             </div>
 
                     <?php
@@ -108,8 +113,17 @@
         ?>
         </div>
     </div> 
-</section>
+    <div class="row">
+        <div class="col text-center">
+                    <button id="more-portfolio" class="btn btn-primary shadow">Show More</button>
+                    <button id="more-portfolio2" class="btn btn-primary shadow">Show More</button>
+                    <button id="less-portfolio" class="btn btn-outline-primary shadow">Show Less</button>
+                    <button id="less-portfolio2" class="btn btn-outline-primary shadow">Show Less</button>
+        </div>
+    </div>
 
+
+    
 <script>
 
     $ = jQuery.noConflict();
@@ -124,15 +138,18 @@
         // for (i = 0; i < y.length; i++) {
         //     y[i].style.display = "block";
         // }
-        for (i = 0; i < 12; i++) {
+        for (i = 0; i < 88; i++) {
             y[i].style.display = "block";
         }
     }
 
     // Show only first 8 child (portfolio)
     $(document).ready(function () {
-        $(".portfolio-items-all .portfolio-item").hide();
-        $(".portfolio-items-all .portfolio-item:lt(12)").show();
+        $('#more-portfolio2').hide();
+        $('#less-portfolio').hide();
+        $('#less-portfolio2').hide();
+        $(".portfolio-items-all .portfolio-item").hide();        
+        $(`.portfolio-items-all .portfolio-item:lt(8)`).show();
 
         // This part below is for tabbed navigation for portfolio show
         $(".portfolio-tab-item").click(function () {
@@ -140,4 +157,39 @@
             $(this).addClass("active");
         });
     });
+
+    $(function() {
+        $('#more-portfolio').click( function() {
+                $(`.portfolio-items-all .portfolio-item:lt(16)`).show();
+                $('#more-portfolio').hide();
+                $('#more-portfolio2').show();
+                $('#less-portfolio').show();
+                return false; // don't follow the link!
+        });
+         $('#more-portfolio2').click( function() {
+                $(`.portfolio-items-all .portfolio-item:lt(24)`).show();
+                $('#more-portfolio2').hide();
+                $('#less-portfolio').hide();
+                $('#less-portfolio2').show();
+                return false; // don't follow the link!
+        });
+        $('#less-portfolio').click( function() {
+                $(".portfolio-items-all .portfolio-item").hide(); 
+                $(`.portfolio-items-all .portfolio-item:lt(8)`).show();
+                $('#more-portfolio2').hide();
+                $('#more-portfolio').show();
+                $('#less-portfolio').hide();
+                return false; // don't follow the link!
+        });
+         $('#less-portfolio2').click( function() {
+                $(".portfolio-items-all .portfolio-item").hide();  
+                $(`.portfolio-items-all .portfolio-item:lt(16)`).show();
+                $('#less-portfolio').show();
+                $('#more-portfolio2').show();
+                $('#less-portfolio2').hide();
+                return false; // don't follow the link!
+        });
+    });
 </script>
+</section>
+

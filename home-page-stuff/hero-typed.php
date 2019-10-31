@@ -1,8 +1,13 @@
 <?php 
+
+defined( 'ABSPATH' ) || exit;
+
+?>
+<?php 
  global $d_portfolio; ?>
 
 
-<section class="container-fluid" id="hero-typed" style="background-image:url(<?php
+<section class="container-fluid bottom-margin" id="hero-typed" style="background-image:url(<?php
   echo $d_portfolio['typed-image']['url'] ?>); color: #000;">
     <div class="row typed-container" >   
         <div class="col-12 d-flex justify-content-center align-items-center flex-column">

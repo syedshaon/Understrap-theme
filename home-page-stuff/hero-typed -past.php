@@ -1,8 +1,13 @@
 <?php 
+
+defined( 'ABSPATH' ) || exit;
+
+?>
+<?php 
  global $d_portfolio; ?>
 
 
-<div class="container-fluid" id="hero-typed" style="background-image:url(<?php
+<div class="container-fluid bottom-margin" id="hero-typed" style="background-image:url(<?php
   echo $d_portfolio['typed-image']['url'] ?>); color: #054157;">
     <div class="row" style="height:100%;">        
     

@@ -558,7 +558,7 @@
 
   var SWIPE_THRESHOLD = 40;
   var Default = {
-    interval: 7000,
+    interval: 5000,
     keyboard: true,
     slide: false,
     pause: 'hover',
@@ -7151,14 +7151,14 @@ $ = jQuery.noConflict();
 $ = jQuery.noConflict(); // To change the bg color of top nav on scroll
 
 $(window).scroll(function () {
-  if ($(this).scrollTop() >= 100) {
+  if ($(this).scrollTop() >= 50) {
     // If page is scrolled more than 100px
-    $('#navbar').css("position", "fixed"); // Fade in the arrow
-
+    $('#navbar').css("position", "fixed");
+    $('#navbar').addClass("dark-shadow");
     $('.header-social-info').hide();
   } else {
-    $('#navbar').css("position", "static"); // Else fade out the arrow
-
+    $('#navbar').css("position", "static");
+    $('#navbar').removeClass("dark-shadow");
     $('.header-social-info').show();
   }
 }); // Return to Top
@@ -7167,7 +7167,7 @@ $(window).scroll(function () {
 $(window).scroll(function () {
   if ($(this).scrollTop() >= 50) {
     // If page is scrolled more than 50px
-    $('#return-to-top').fadeIn(200); // Fade in the arrow
+    $('#return-to-top').fadeIn(200);
   } else {
     $('#return-to-top').fadeOut(200); // Else fade out the arrow
   }

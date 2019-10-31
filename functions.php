@@ -24,6 +24,7 @@ $understrap_includes = array(
 	'/woocommerce.php',                     // Load WooCommerce functions.
 	'/editor.php',                          // Load Editor functions.
 	'/deprecated.php',                      // Load deprecated functions.
+	'/related-post.php'
 );
 
 foreach ( $understrap_includes as $file ) {
@@ -55,3 +56,17 @@ add_action('admin_enqueue_scripts', 'addReduxStyle');
  * ACF Plugin and it's fields.
  */
 require get_template_directory() . '/inc/acf-theme-field.php';
+
+
+// Login Styles
+
+function loginStyles(){
+    wp_enqueue_style('login_styles', get_stylesheet_directory_uri().'/login/login.css' );
+}
+add_action('login_enqueue_scripts', 'loginStyles');
+//  Add styles or Scripts
+
+function carolinaspa_redirect_login(){
+    return home_url();
+}
+add_filter('login_headerurl', 'carolinaspa_redirect_login');

@@ -233,13 +233,17 @@
                     'placebo' => ' ',
                     'options' => array(
                         'enabled'  => array(                            
-                            'slider'     => 'Slider',
-                            'highlights' => 'Highlights',
-                            'staticpage' => 'Static Page',
-                            'services'   => 'Services'
+                            
+                            'hero-typed' => 'Typed Effect Section',
+                            'staticpage' => 'Static Page Content',
+                            'about-us'   => 'About Section',
+                            'services'   => 'Services Section',
+                            'portfolio'   => 'Portfolio Section',
+                            'feedback'   => 'Feedback Section',
+                            'contact'     => 'Contact Section'
                         ),
                         'disabled' => array(
-                            'review'   => 'Reviews'
+                            'hero-slider'     => 'Carousel Section',
                         )
                     ),
                 ),
@@ -368,6 +372,151 @@
         )));
          
           Redux::setsection($opt_name, array(
+        'title'     => 'Feedback Setup',
+        'id'        => 'feedback_setup',
+        'desc'      => 'Setup Feedback Section here',
+        'icon'      => 'el el-quote-alt',
+        'subsection' => true,
+        'fields'    => array(
+            
+            array(
+                'id'        => 'feedback-heading',
+                'type'      => 'text',
+                'title'     => "Feedback Heading",
+                'default'   => 'What People Say About Us?'
+            ),
+            array(
+                'id'        => 'feedback-1',
+                'type'      => 'text',
+                'title'     => "Feedback 1",
+            ),
+            array(
+                'id'        => 'provider-name-1',
+                'type'      => 'text',
+                'title'     => "Feedback Provider Name 1",
+            ),
+             array(
+                'id'        => 'provider-title-1',
+                'type'      => 'text',
+                'title'     => "Feedback Provider Title 1",
+            ),
+            array(
+                'id'        => 'provider-image-1',
+                'type'      => 'media',
+                'title'     => "Provider's Image 1",
+                'desc'  => 'Desired Image size is 100X100 pixel "',
+            ),
+            array(
+                'id'        => 'feedback-2',
+                'type'      => 'text',
+                'title'     => "Feedback 2",
+            ),
+            array(
+                'id'        => 'provider-name-2',
+                'type'      => 'text',
+                'title'     => "Feedback Provider Name 2",
+            ),
+             array(
+                'id'        => 'provider-title-2',
+                'type'      => 'text',
+                'title'     => "Feedback Provider Title 2",
+            ),
+            array(
+                'id'        => 'provider-image-2',
+                'type'      => 'media',
+                'title'     => "Provider's Image 2",
+                'desc'  => 'Desired Image size is 100X100 pixel "',
+            ),
+            array(
+                'id'        => 'feedback-3',
+                'type'      => 'text',
+                'title'     => "Feedback 3",
+            ),
+            array(
+                'id'        => 'provider-name-3',
+                'type'      => 'text',
+                'title'     => "Feedback Provider Name 3",
+            ),
+             array(
+                'id'        => 'provider-title-3',
+                'type'      => 'text',
+                'title'     => "Feedback Provider Title 3",
+            ),
+            array(
+                'id'        => 'provider-image-3',
+                'type'      => 'media',
+                'title'     => "Provider's Image 3",
+                'desc'  => 'Desired Image size is 100X100 pixel "',
+            ),
+            array(
+                'id'        => 'feedback-4',
+                'type'      => 'text',
+                'title'     => "Feedback 4",
+            ),
+            array(
+                'id'        => 'provider-name-4',
+                'type'      => 'text',
+                'title'     => "Feedback Provider Name 4",
+            ),
+            array(
+                'id'        => 'provider-title-4',
+                'type'      => 'text',
+                'title'     => "Feedback Provider Title 4",
+            ),
+            array(
+                'id'        => 'provider-image-4',
+                'type'      => 'media',
+                'title'     => "Provider's Image 4",
+                'desc'  => 'Desired Image size is 100X100 pixel "',
+            ),
+            array(
+                'id'        => 'feedback-5',
+                'type'      => 'text',
+                'title'     => "Feedback 5",
+            ),
+            array(
+                'id'        => 'provider-name-5',
+                'type'      => 'text',
+                'title'     => "Feedback Provider Name 5",
+            ),
+            array(
+                'id'        => 'provider-title-5',
+                'type'      => 'text',
+                'title'     => "Feedback Provider Title 5",
+            ),
+            array(
+                'id'        => 'provider-image-5',
+                'type'      => 'media',
+                'title'     => "Provider's Image 5",
+                'desc'  => 'Desired Image size is 100X100 pixel "',
+            ),
+            array(
+                'id'        => 'feedback-6',
+                'type'      => 'text',
+                'title'     => "Feedback 6",
+            ),
+            array(
+                'id'        => 'provider-name-6',
+                'type'      => 'text',
+                'title'     => "Feedback Provider Name 6",
+            ),
+             array(
+                'id'        => 'provider-title-6',
+                'type'      => 'text',
+                'title'     => "Feedback Provider Title 6",
+            ),
+            array(
+                'id'        => 'provider-image-6',
+                'type'      => 'media',
+                'title'     => "Provider's Image 6",
+                'desc'  => 'Desired Image size is 100X100 pixel "',
+            ),
+            
+
+        )));
+
+        
+         Redux::setsection($opt_name, array(
         'title'     => 'Services Setup',
         'id'        => 'services_setup',
         'desc'      => 'Setup Services Section here',
@@ -479,7 +628,6 @@
             ),
 
         )));
-
         Redux::setsection($opt_name, array(
         'title'     => 'Contact Setup',
         'id'        => 'contact_setup',

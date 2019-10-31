@@ -11,13 +11,14 @@ defined( 'ABSPATH' ) || exit;
 
 <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 
-	<header class="entry-header">
+	<header class="entry-header mb-5 ">
 
-		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+		<?php the_title( '<h1 class="entry-title  pb-3 border-bottom border-secondary">', '</h1>' ); ?>
 
 		<div class="entry-meta">
 
 			<?php understrap_posted_on(); ?>
+			<?php understrap_entry_footer(); ?>
 
 		</div><!-- .entry-meta -->
 
@@ -40,10 +41,6 @@ defined( 'ABSPATH' ) || exit;
 
 	</div><!-- .entry-content -->
 
-	<footer class="entry-footer">
 
-		<?php understrap_entry_footer(); ?>
-
-	</footer><!-- .entry-footer -->
 
 </article><!-- #post-## -->
